@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
+$primaryFont: 'Young Serif', serif;;
+$secondaryFont: 'Jaldi', sans-serif;
 /*
-$primaryFont: ;
-$secondaryFont: ;
 $primaryColor: ;
 $secondaryColor: ;
 */
@@ -13,7 +15,6 @@ $secondaryColor: ;
         text-decoration: none;
     }
 }
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -40,4 +41,16 @@ $secondaryColor: ;
 }
 .absolute {
     position: absolute;
+}
+.smallerFont {
+    font-size: .75rem;
+    color: rgb(182, 0, 0);
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: $secondaryFont;
+    h3 {
+        font-family: $primaryFont;
+    }
 }

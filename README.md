@@ -1,4 +1,4 @@
-# Title
+# Pizza Parlor 🍕
 by [Hayeong Pyeon](https://www.hayeong.website)
 
 ## Table of Contents
@@ -18,17 +18,17 @@ by [Hayeong Pyeon](https://www.hayeong.website)
 - Test Driven Development
 
 ## Description
-- This is an in-class project provided by Epicodus. 
-- This project is to review 'JS Objects' course. 
-- This page contains 'Tests' section to practice TDD. 
+- This is an independent project assigned by Epicodus. 
+- This project is part of 'Object-oriented JS' course. 
+- This project is to also practice TDD method. 
 
 ## Setup Requirements
-* Clone this repository to your desktop.
-* Navigate to the top level of the directory. 
-* Open `index.html` in your browser. 
+1. Clone this repository to your desktop.
+2. Navigate to the top level of the directory. 
+3. Open `index.html` in your browser. 
 
 ## Link
-
+https://hypyeon.github.io/pizza-parlor/
 
 ## Tests
 ```
@@ -39,8 +39,8 @@ Code:
 Expected: 
 ```
 ## Known Bugs
-- Currently 
-- Last updated: 
+- No bugs detected currently. Feel free to reach out to the [author](mailto:hayeong.pyeon@gmail.com) if find any. 
+- Last updated: December 9th, 2023
 
 ## License
 [MIT](/LICENSE.txt) Copyright © 2023 Hayeong Pyeon

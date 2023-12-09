@@ -3,11 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Pizza Parlor</title>
 </head>
-<body>
-    
+<body class="flex col flex-center">
+    <section>
+        <!--User's name and size of orders-->
+        <form id="orderInfo">
+            <div>
+                <h3>Tell us your name!</h3>
+                <input type="text" name="orderName" id="orderName" placeholder="This will be used for your order.">    
+            </div>
+            <div>
+                <h3>How many order of pizza today?</h3>
+                <div>
+                    <input type="radio" name="onePizza" id="onePizza">
+                    <label for="onePizza">1 Pizza</label>        
+                </div>
+                <div>
+                    <input type="radio" name="twoPizzas" id="twoPizzas">
+                    <label for="twoPizzas">2 Pizzas <span class="smallerFont">5% off your entire order!</span></label>        
+                </div>
+                <div>
+                    <input type="radio" name="threePizzas" id="threePizzas">
+                    <label for="threePizzas">3 Pizzas <span class="smallerFont">10% off your entire order!</span></label>        
+                </div>
+            </div>
+            <div>
+                <h3>How would you like to receive your order?</h3>
+                <div>
+                    <input type="radio" name="pickup" id="pickup">
+                    <label for="pickup">Pick up at store <span class="smallerFont">we offer 5% off for pickup!</span></label>        
+                </div>
+                <div>
+                    <input type="radio" name="delivery" id="delivery">
+                    <label for="delivery">Delivery <span class="smallerFont">delivery fee: $4</span></label>        
+                </div>
+            </div>
+            <button type="submit" id="startOrder">Customize your pizza</button>
+        </form>
+    </section>
+    <section>
+        <form id="pizzaBuilder">
+
+        </form>
+        <button type="submit">Check out</button>
+    </section>
+    <section>
+        <h3>Here's the summary of your order...</h3>
+        <ul>
+            <li>Number of order: <span id="orderSumNumber"></span></li>
+        </ul>
+        <div>
+            <p>Total price: <span id="totalPrice"></span></p>
+            <p>Discount applied: <span id="discount"></span></p>
+            <p>Delivery fee: <span id="deliveryFee"></span></p>
+            <p>Final price: <span id="finalPrice"></span></p>    
+        </div>
+    </section>
     <script src="js/scripts.js"></script>
 </body>
 </html>

@@ -32,11 +32,11 @@ https://hypyeon.github.io/pizza-parlor/
 
 ## Tests
 ```
-Describe:   
+Describe: Pizza()
  
-Test: 
-Code:  
-Expected: 
+Test: "It should return a Pizza object with two properties for toppings and size."
+Code: const firstPizza = new Pizza(["olives", "spinach", "mushroom"], "large");
+Expected: Pizza { toppings: ["olives", "spinach", "mushroom"], size: "large" }
 ```
 ## Known Bugs
 - No bugs detected currently. Feel free to reach out to the [author](mailto:hayeong.pyeon@gmail.com) if find any. 

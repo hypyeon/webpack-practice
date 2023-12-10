@@ -32,11 +32,17 @@ https://hypyeon.github.io/pizza-parlor/
 
 ## Tests
 ```
-Describe: Pizza()
+Describe: Order()
  
-Test: "It should return a Pizza object with four properties for order name, size of pizza, number of selected $2 toppings and number of selected $3 toppings."
-Code: const firstPizza = new Pizza("Minsu", "large", 3, 1);
-Expected: Pizza { orderName: "Minsu", size: "large", toppingsTwo: 3, toppingsThree: 1 }
+Test: "It should return an Order object with five properties for: order name, size of pizza, an array of selected $2 toppings, an array of selected $3 toppings, and food receive method."
+Code: const minsu = new Order("Minsu", "large", ["olive", "mushroom"], ["pepperoni"], "pickup");
+Expected: Pizza { orderName: "Minsu", size: "large", firstToppings: ["olive", "mushroom"], secondToppings: ["pepperoni"], method: "pickup" }
+
+Describe: Order.getTotalPrice()
+ 
+Test: "It should return a total price for the order, rounded to 2 decimals."
+Code: firstPizza.getTotalPrice();
+Expected: 22.09
 
 Describe: formatName()
  

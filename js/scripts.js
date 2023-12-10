@@ -1,24 +1,45 @@
-function Pizza(orderName, size, toppingsTwo, toppingsThree) {
+function Order(orderName, size, firstToppings, secondToppings, method) {
     this.orderName = orderName;
     this.size = size;
-    this.toppingsTwo = toppingsTwo;
-    this.toppingsThree = toppingsThree;
+    this.firstToppings = firstToppings;
+    this.secondToppings = secondToppings; 
+    this.method = method;
 }
-function formatName(name, num) {
+Order.prototype.getTotalPrice = function() {
+    let priceForSize;
+    switch (this.size) {
+        case 'small': 
+            priceForSize = 9.5;
+            break;
+        case 'medium':
+            priceForSize = 12.75;
+            break;
+        case 'large':
+            priceForSize = 16.25;
+            break;
+    }
+    if (this.size === 'small') {
+        priceForSize = 9.5;
+    } else if (this.size === 'medium') {
+        priceForSize = 12.75;
+    } else if (this.size === 'large') {
+        priceForSize = 16.25;
+    } else {
+        window.location.reload();
+    }
+    const priceForFirstToppings = this.firstToppings.length * 2;
+    const priceForSecondToppings = this.secondToppings.length * 3;
+
+    let totalPrice = priceForSize + priceForFirstToppings + priceForSecondToppings;
+    if (this.method === "pickup") {
+        totalPrice *= 0.95;
+    } 
+    return totalPrice.toFixed(2);
+}
+function formatName(name) {
     if (name !== '') {
         return name.charAt(0).toUpperCase() + name.substr(1).toLowerCase();
-    } else {
-        switch (num){
-            case 1:
-                return 'Customer 1';
-            case 2:
-                return 'Customer 2';
-            case 3:
-                return 'Customer 3';
-            default:
-                break;
-        }
-    }
+    } 
 }
 function createTextInput(area, placeholder, id, name) {
     const inputText = document.createElement('input');

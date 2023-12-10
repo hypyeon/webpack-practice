@@ -8,9 +8,29 @@
 </head>
 <body class="flex col flex-center">
     <section id="firstSection">
-        <form id="pizzaBuilder">
+        <form id="orderInfo">
+            <div id="orderName">
+                <h3>Who's this order for?</h3>
+                <input type="text" placeholder="Name for your order" required>
+            </div>
             <div id="pizzaSize">
-
+                <h3>Select the size of the pizza.</h3>
+                <input type="radio" name="size" id="small">
+                <label for="small">Small (8"): $9.50</label>
+                <input type="radio" name="size" id="medium">
+                <label for="medium">Medium (11"): $12.75</label>
+                <input type="radio" name="size" id="large">
+                <label for="large">Large (14"): $16.25</label>
+            </div>
+            <div id="pizzaBuilder"></div>
+            <div id="pizzaMenu"></div>
+            <div id="receiveMethod">
+                <h3>How would you like to receive your order?</h3>
+                <input type="radio" name="receive" id="pickup">
+                <label for="pickup">Pick up in store <span class="smallerFont">get 5% off your order!</span></label>
+                <br>
+                <input type="radio" name="receive" id="delivery">
+                <label for="small">Delivery <span class="smallerFont">please provide driver's tip upon receiving your order - thanks!</span></label>
             </div>
             <button type="submit" id="startOrder">Customize your pizza</button>
         </form>

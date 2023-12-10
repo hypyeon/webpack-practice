@@ -4,11 +4,20 @@ function Pizza(orderName, size, toppingsTwo, toppingsThree) {
     this.toppingsTwo = toppingsTwo;
     this.toppingsThree = toppingsThree;
 }
-function formatName(name) {
+function formatName(name, num) {
     if (name !== '') {
         return name.charAt(0).toUpperCase() + name.substr(1).toLowerCase();
     } else {
-        return "Player";
+        switch (num){
+            case 1:
+                return 'Customer 1';
+            case 2:
+                return 'Customer 2';
+            case 3:
+                return 'Customer 3';
+            default:
+                break;
+        }
     }
 }
 function createTextInput(area, placeholder, id, name) {
@@ -75,9 +84,9 @@ function createBasePrice(area, label) {
     createRadioInput(area, "small", label);
     createLabel(area, "small", 'Small (8"): $9.00');
     createRadioInput(area, "medium", label);
-    createLabel(area, "medium", 'Medium (10"): $11.50');
+    createLabel(area, "medium", 'Medium (10"): $12.50');
     createRadioInput(area, "large", label);
-    createLabel(area, "large", 'Large (12"): $13.75');
+    createLabel(area, "large", 'Large (12"): $16.25');
 }
 function createToppingTwo(area, label) {
     const toppingTwoTitle = document.createElement("h4");
@@ -130,53 +139,72 @@ function createPizzaBuilder() {
     const builderCards = document.getElementById("builderCards");
     if (orderForOne.checked) {
         const customer1 = document.createElement("h3");
-        firstPizza.orderName = formatName(orderName1.value);
-        builderCards.append(customer1);
-        customer1.innerText = firstPizza.orderName;
+        const name1 = formatName(orderName1.value, 1);
+        firstPizza.orderName = name1;
+        customer1.innerText = name1;
         const div1 = document.createElement("div");
         div1.classList.add("builder");
+        div1.append(customer1);
         createBasePrice(div1, "size1");
         createToppingTwo(div1, "toppingTwo1");
         createToppingThree(div1, "toppingThree1");
         builderCards.append(div1);
     } else if (orderForTwo.checked) {
-        const name1 = formatName(orderName1.value);
-        const name2 = formatName(orderName2.value);
+        const customer1 = document.createElement("h3");
+        const customer2 = document.createElement("h3");
+        const name1 = formatName(orderName1.value, 1);
+        const name2 = formatName(orderName2.value, 2);
+        //
         firstPizza.orderName = name1;
+        customer1.innerText = name1;
         secondPizza.orderName = name2;
+        customer2.innerText = name2; 
+        //
         const div1 = document.createElement("div");
         div1.classList.add("builder");
+        div1.append(customer1);
         createBasePrice(div1, "size1");
         createToppingTwo(div1, "toppingTwo1");
         createToppingThree(div1, "toppingThree1");
         builderCards.append(div1);
+        //
         const div2 = document.createElement("div");
         div2.classList.add("builder");
+        div2.append(customer2);
         createBasePrice(div2, "size2");
         createToppingTwo(div2, "toppingTwo2");
         createToppingThree(div2, "toppingThree2");
         builderCards.append(div2);
     } else if (orderForThree.checked) {
-        const name1 = formatName(orderName1.value);
-        const name2 = formatName(orderName2.value);
-        const name3 = formatName(orderName3.value);
+        const customer1 = document.createElement("h3");
+        const customer2 = document.createElement("h3");
+        const customer3 = document.createElement("h3");
+        const name1 = formatName(orderName1.value, 1);
+        const name2 = formatName(orderName2.value, 2);
+        const name3 = formatName(orderName3.value, 3);
         firstPizza.orderName = name1;
         secondPizza.orderName = name2;
         thridPizza.orderName = name3;
+        customer1.innerText = name1;
+        customer2.innerText = name2;
+        customer3.innerText = name3;
         const div1 = document.createElement("div");
         div1.classList.add("builder");
+        div1.append(customer1);
         createBasePrice(div1, "size1");
         createToppingTwo(div1, "toppingTwo1");
         createToppingThree(div1, "toppingThree1");
         builderCards.append(div1);
         const div2 = document.createElement("div");
         div2.classList.add("builder");
+        div2.append(customer2);
         createBasePrice(div2, "size2");
         createToppingTwo(div2, "toppingTwo2");
         createToppingThree(div2, "toppingThree2");
         builderCards.append(div2);
         const div3 = document.createElement("div");
         div3.classList.add("builder");
+        div3.append(customer3);
         createBasePrice(div3, "size3");
         createToppingTwo(div3, "toppingTwo3");
         createToppingThree(div3, "toppingThree3");
@@ -184,6 +212,109 @@ function createPizzaBuilder() {
     }
     else {
         window.location.reload();
+    }
+}
+function getNumOfOrder() {
+    const orderForOne = document.getElementById("onePizza");
+    const orderForTwo = document.getElementById("twoPizzas");
+    const orderForThree = document.getElementById("threePizzas");
+    if (orderForOne.checked) {
+        return 1;
+    } else if (orderForTwo.checked) {
+        return 2;
+    } else if (orderForThree.checked) {
+        return 3;
+    }
+}
+function getPriceForSize(size) {
+    let selectedSize;
+    for (let i = 0; i <= size.length; i++) {
+        if (size[i].checked) {
+            selectedSize = size[i].id;
+        }
+    }
+    return selectedSize;
+}
+function getPriceForToppingsTwo(toppings) {
+    let twoDollarToppings = 0;
+    for (let i = 0; i <= toppings.length; i++) {
+        if (toppings[i].checked) {
+            twoDollarToppings++;
+        }
+    }
+    return twoDollarToppings;
+}
+function getPriceForToppingThree(toppings) {
+    let threeDollarToppings = 0;
+    for (let i = 0; i <= toppings.length; i++) {
+        if (toppings[i].checked) {
+            threeDollarToppings++;
+        }
+    }
+    return threeDollarToppings;
+}
+function calculatePrice(size, toppingTwo, toppingThree) {
+    const selectedSize = getPriceForSize(size);
+    let priceForSize;
+    const selectedToppingsTwo = getPriceForToppingsTwo(toppingTwo);
+    let priceForToppingTwo;
+    const selectedToppingsThree = getPriceForToppingThree(toppingThree);
+    let priceForToppingThree;
+
+    if (selectedSize === 'small') {
+        priceForSize = 9;
+    } else if (selectedSize === 'medium') {
+        priceForSize = 12.5;
+    } else if (selectedSize === 'large') {
+        priceForSize = 16.25;
+    } else {
+        priceForSize = NaN;
+    }
+
+    priceForToppingTwo = selectedToppingsTwo * 2;
+    priceForToppingThree = selectedToppingsThree * 3;
+    return priceForSize + priceForToppingTwo + priceForToppingThree; 
+}
+function calculatePerCustomer(num) {
+    const sizesOne = document.querySelectorAll('input[name="size1"]');
+    const sizesTwo = document.querySelectorAll('input[name="size2"]');
+    const sizesThree = document.querySelectorAll('input[name="size3"]');
+
+    const sizeArrOne = Array.from(sizesOne);
+    const sizeArrTwo = Array.from(sizesTwo);
+    const sizeArrThree = Array.from(sizesThree);
+
+    const toppingTwoOne = document.querySelectorAll('input[name="toppingTwo1"]');
+    const toppingTwoTwo = document.querySelectorAll('input[name="toppingTwo2"]');
+    const toppingTwoThree = document.querySelectorAll('input[name="toppingTwo3"]');
+
+    const toppingTwoArrOne = Array.from(toppingTwoOne);
+    const toppingTwoArrTwo = Array.from(toppingTwoTwo);
+    const toppingTwoArrThree = Array.from(toppingTwoThree);
+
+    const toppingThreeOne = document.querySelectorAll('input[name="toppingThree1"]');
+    const toppingThreeTwo = document.querySelectorAll('input[name="toppingThree2"]');
+    const toppingThreeThree = document.querySelectorAll('input[name="toppingThree3"]');
+
+    const toppingThreeArrOne = Array.from(toppingThreeOne);
+    const toppingThreeArrTwo = Array.from(toppingThreeTwo);
+    const toppingThreeArrThree = Array.from(toppingThreeThree);
+
+    if (num === 1) { 
+        const priceForCustomer1 = calculatePrice(sizeArrOne, toppingTwoArrOne, toppingThreeArrOne);
+        return `Price for ${firstPizza.orderName}'s pizza: ${priceForCustomer1}`;
+    } else if (num === 2) {
+        const priceForCustomer1 = calculatePrice(sizeArrOne, toppingTwoArrOne, toppingThreeArrOne);
+        const priceForCustomer2 = calculatePrice(sizeArrTwo, toppingTwoArrTwo, toppingThreeArrTwo);
+        return `Price for ${firstPizza.orderName}'s pizza: ${priceForCustomer1} \n
+        Price for ${secondPizza.orderName}'s pizza: ${priceForCustomer2}`;
+    } else if (num === 3) {
+        const priceForCustomer1 = calculatePrice(sizeArrOne, toppingTwoArrOne, toppingThreeArrOne);
+        const priceForCustomer2 = calculatePrice(sizeArrTwo, toppingTwoArrTwo, toppingThreeArrTwo);
+        const priceForCustomer3 = calculatePrice(sizeArrThree, toppingTwoArrThree, toppingThreeArrThree);
+        return `Price for ${firstPizza.orderName}'s pizza: ${priceForCustomer1} \n
+        Price for ${secondPizza.orderName}'s pizza: ${priceForCustomer2} \n
+        Price for ${thirdPizza.orderName}'s pizza: ${priceForCustomer3}`;
     }
 }
 function firstHandler() {
@@ -195,7 +326,19 @@ function firstHandler() {
         document.getElementById("secondSection").classList.remove("hidden");
     })
 }
+function secondHandler() {
+    const form = document.getElementById("pizzaBuilder");
+    form.addEventListener("submit", e => {
+        e.preventDefault();
+        const numOfOrder = getNumOfOrder();
+        const totalPrice = document.getElementById("totalPrice");
+        totalPrice.innerText = calculatePerCustomer(numOfOrder);
+        document.getElementById("secondSection").classList.add("hidden");
+        document.getElementById("fourthSection").classList.remove("hidden");
+    });
+}
 window.onload = () => {
     getOrderNumInfo();
     firstHandler();
+    secondHandler();
 }

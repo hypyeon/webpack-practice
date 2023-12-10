@@ -11,32 +11,68 @@
         <form id="orderInfo">
             <div id="orderName">
                 <h3>Who's this order for?</h3>
-                <input type="text" placeholder="Name for your order" required>
+                <input type="text" id="name" placeholder="Name for your order" required>
             </div>
             <div id="pizzaSize">
                 <h3>Select the size of the pizza.</h3>
-                <input type="radio" name="size" id="small">
+                <input type="radio" name="size" id="small" checked>
                 <label for="small">Small (8"): $9.50</label>
                 <input type="radio" name="size" id="medium">
                 <label for="medium">Medium (11"): $12.75</label>
                 <input type="radio" name="size" id="large">
                 <label for="large">Large (14"): $16.25</label>
             </div>
-            <div id="pizzaBuilder"></div>
-            <div id="pizzaMenu"></div>
+            <div id="firstTopping">
+                <h3>Select the first toppings. <span class="smallerFont">($2 each)</span></h3>
+                <input type="checkbox" name="first" id="extraCheese">
+                <label for="extraCheese">Extra Cheese</label>
+                <input type="checkbox" name="first" id="olives">
+                <label for="olives">Olives</label>
+                <input type="checkbox" name="first" id="mushroom">
+                <label for="mushroom">Mushroom</label>
+                <input type="checkbox" name="first" id="pepper">
+                <label for="pepper">Green Bell Pepper</label>
+                <input type="checkbox" name="first" id="spinach">
+                <label for="spinach">Spinach</label>
+                <input type="checkbox" name="first" id="basil">
+                <label for="basil">Basil</label>
+                <input type="checkbox" name="first" id="tomatoes">
+                <label for="tomatoes">Diced Tomatoes</label>
+                <input type="checkbox" name="first" id="onions">
+                <label for="onions">Diced White Onions</label>
+                <input type="checkbox" name="first" id="jalapenos">
+                <label for="jalapenos">Jalapenos</label>
+            </div>
+            <div id="secondTopping">
+                <h3>Select the second toppings. <span class="smallerFont">($3 each)</span></h3>
+                <input type="checkbox" name="second" id="pepperoni">
+                <label for="pepperoni">Pepperoni</label>
+                <input type="checkbox" name="second" id="beef">
+                <label for="beef">Ground Beef</label>
+                <input type="checkbox" name="second" id="bacon">
+                <label for="bacon">Bacon</label>
+                <input type="checkbox" name="second" id="chicken">
+                <label for="chicken">Grilled Chicken</label>
+                <input type="checkbox" name="second" id="salami">
+                <label for="salami">Salami</label>
+            </div>
             <div id="receiveMethod">
                 <h3>How would you like to receive your order?</h3>
-                <input type="radio" name="receive" id="pickup">
+                <input type="radio" name="method" id="pickup" checked>
                 <label for="pickup">Pick up in store <span class="smallerFont">get 5% off your order!</span></label>
                 <br>
-                <input type="radio" name="receive" id="delivery">
+                <input type="radio" name="method" id="delivery">
                 <label for="small">Delivery <span class="smallerFont">please provide driver's tip upon receiving your order - thanks!</span></label>
             </div>
             <button type="submit" id="startOrder">Customize your pizza</button>
         </form>
     </section>
     <section class="hidden" id="secondSection">
-        <div></div>
+        <ul>
+            <li>Order Name: <span id="sum-name"></span></li>
+            <li>Discount: <span id="sum-discount"></span></li>
+            <li>Total Price: <span id="sum-price"></span></li>
+        </ul>
     </section>
     <script src="js/scripts.js"></script>
 </body>

@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap");
-/*
-$primaryColor: ;
-$secondaryColor: ;
-*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -47,6 +43,7 @@ $secondaryColor: ;
 .smallerFont {
   font-size: 0.75rem;
   color: rgb(182, 0, 0);
+  font-family: "Jaldi", sans-serif;
 }
 
 .hidden {
@@ -85,36 +82,19 @@ form input, form button {
 form input[type=text] {
   min-width: 8.5rem;
   padding: 0 0.25rem;
-  margin: 0.5rem 0.25rem 0.5rem 0;
+  margin: 0.25rem 0;
+}
+form label {
+  margin-right: 0.5rem;
+}
+form div {
+  padding: 1rem 0;
 }
 form button {
-  margin: 1rem 0;
+  margin: 1rem auto;
   padding: 0.25rem 1rem;
   border: none;
   border-radius: 4px;
   background-color: black;
   color: orange;
-}
-
-#firstSection #names {
-  height: 2rem;
-}
-
-#secondSection .builder {
-  border-radius: 12px;
-  background-color: white;
-  padding: 1.5rem 2.5rem;
-  margin-bottom: 0.5rem;
-}
-#secondSection .builder h3 {
-  text-decoration: underline;
-  color: rgb(255, 119, 0);
-  padding: 0 0 1rem 0;
-}
-#secondSection .builder h4 {
-  font-size: 1.1rem;
-}
-#secondSection .builder label {
-  margin-left: 0.25rem;
-  margin-right: 0.75rem;
 }/*# sourceMappingURL=style.css.map */

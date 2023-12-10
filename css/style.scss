@@ -46,6 +46,9 @@ $secondaryColor: ;
     font-size: .75rem;
     color: rgb(182, 0, 0);
 }
+.hidden {
+    display: none;
+}
 body {
     width: 100vw;
     height: 100vh;
@@ -74,8 +77,9 @@ form {
         font-family: $secondaryFont;
     }
     input[type="text"] {
-        min-width: 12rem;
+        min-width: 8.5rem;
         padding: 0 .25rem;
+        margin: .5rem .25rem .5rem 0;
     }
     button {
         margin: 1rem 0;
@@ -84,5 +88,22 @@ form {
         border-radius: 4px;
         background-color: black;
         color: orange;
+    }
+}
+#firstSection {
+    #names {
+        height: 2rem;
+    }
+}
+#secondSection {
+    .builder {
+        border-radius: 12px;
+        background-color: white;
+        padding: 1rem;
+        margin-bottom: .5rem;
+        label {
+            margin-left: .25rem;
+            margin-right: .75rem;
+        }
     }
 }

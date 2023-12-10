@@ -7,8 +7,7 @@
     <title>Pizza Parlor</title>
 </head>
 <body class="flex col flex-center">
-    <section>
-        <!--User's name and size of orders-->
+    <section id="firstSection">
         <form id="orderInfo">
             <div>
                 <h3>How many order of pizza today?</h3>
@@ -29,25 +28,27 @@
             <button type="submit" id="startOrder">Customize your pizza</button>
         </form>
     </section>
-    <section>
+    <section class="hidden" id="secondSection">
         <form id="pizzaBuilder">
             <div id="builderCards"></div>
+            <button type="submit">Next</button>
+        </form>
+    </section>
+    <section class="hidden" id="thirdSection">
+        <form>
+            <h3>How would you like to receive your order?</h3>
             <div>
-                <h3>How would you like to receive your order?</h3>
-                <div>
-                    <input type="radio" name="pickup" id="pickup">
-                    <label for="pickup">Pick up at store <span class="smallerFont">we offer 5% off for pickup!</span></label>        
-                </div>
-                <div>
-                    <input type="radio" name="delivery" id="delivery">
-                    <label for="delivery">Delivery <span class="smallerFont">delivery fee: $2.50 + distance charge</span></label>        
-                </div>
+                <input type="radio" name="pickup" id="pickup">
+                <label for="pickup">Pick up at store <span class="smallerFont">we offer 5% off for pickup!</span></label>        
             </div>
-
+            <div>
+                <input type="radio" name="delivery" id="delivery">
+                <label for="delivery">Delivery <span class="smallerFont">delivery fee: $2.50 + distance charge</span></label>        
+            </div>
             <button type="submit">Check out</button>
         </form>
     </section>
-    <section>
+    <section class="hidden" id="fourthSection">
         <h3>Here's summary of your order ...</h3>
         <ul>
             <li>Number of order: <span id="orderSumNumber"></span></li>

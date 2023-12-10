@@ -49,6 +49,10 @@ $secondaryColor: ;
   color: rgb(182, 0, 0);
 }
 
+.hidden {
+  display: none;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -79,8 +83,9 @@ form input, form button {
   font-family: "Jaldi", sans-serif;
 }
 form input[type=text] {
-  min-width: 12rem;
+  min-width: 8.5rem;
   padding: 0 0.25rem;
+  margin: 0.5rem 0.25rem 0.5rem 0;
 }
 form button {
   margin: 1rem 0;
@@ -89,4 +94,19 @@ form button {
   border-radius: 4px;
   background-color: black;
   color: orange;
+}
+
+#firstSection #names {
+  height: 2rem;
+}
+
+#secondSection .builder {
+  border-radius: 12px;
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+#secondSection .builder label {
+  margin-left: 0.25rem;
+  margin-right: 0.75rem;
 }/*# sourceMappingURL=style.css.map */

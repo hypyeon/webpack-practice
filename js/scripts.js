@@ -128,12 +128,11 @@ function createPizzaBuilder() {
     const secondPizza = new Pizza("Customer 2", "size", 0, 0);
     const thridPizza = new Pizza("Customer 3", "size", 0, 0);
     const builderCards = document.getElementById("builderCards");
-    const nameForOrder = document.createElement("h3");
     if (orderForOne.checked) {
-        const name = formatName(orderName1.value);
-        firstPizza.orderName = name;
-        builderCards.append(nameForOrder);
-        nameForOrder.innerText = firstPizza.orderName;
+        const customer1 = document.createElement("h3");
+        firstPizza.orderName = formatName(orderName1.value);
+        builderCards.append(customer1);
+        customer1.innerText = firstPizza.orderName;
         const div1 = document.createElement("div");
         div1.classList.add("builder");
         createBasePrice(div1, "size1");

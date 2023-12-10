@@ -34,9 +34,15 @@ https://hypyeon.github.io/pizza-parlor/
 ```
 Describe: Pizza()
  
-Test: "It should return a Pizza object with two properties for toppings and size."
-Code: const firstPizza = new Pizza(["olives", "spinach", "mushroom"], "large");
-Expected: Pizza { toppings: ["olives", "spinach", "mushroom"], size: "large" }
+Test: "It should return a Pizza object with four properties for order name, size of pizza, number of selected $2 toppings and number of selected $3 toppings."
+Code: const firstPizza = new Pizza("Minsu", "large", 3, 1);
+Expected: Pizza { orderName: "Minsu", size: "large", toppingsTwo: 3, toppingsThree: 1 }
+
+Describe: formatName()
+ 
+Test: "It should return a name with the first letter in upper case and the rest in lower cases."
+Code: formatName("elsa");
+Expected: "Elsa"
 ```
 ## Known Bugs
 - No bugs detected currently. Feel free to reach out to the [author](mailto:hayeong.pyeon@gmail.com) if find any. 

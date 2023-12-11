@@ -6,6 +6,11 @@ function Order(orderName, size, firstToppings, secondToppings, method) {
     this.secondToppings = secondToppings; 
     this.method = method;
 }
+Order.prototype.getNumOfToppings = function() {
+    const numOfFirsts = this.firstToppings.length;
+    const numOfSeconds = this.secondToppings.length;
+    return `${numOfFirsts} first topping(s) and ${numOfSeconds} second topping(s)`;
+}
 Order.prototype.getTotalPrice = function() {
     let priceForSize;
     switch (this.size) {
@@ -68,20 +73,20 @@ function getSize() {
 }
 function getFirstToppings() {
     const toppings = document.querySelectorAll('input[name="first"]');
-    let selectedArr;
+    let selectedArr = [];
     for (const topping of toppings) {
         if (topping.checked) {
-            selectedArr.push(topping.id);
+            selectedArr.push(topping);
         }
     }
     return selectedArr;
 }
 function getSecondToppings() {
     const toppings = document.querySelectorAll('input[name="second"]');
-    let selectedArr;
+    let selectedArr = [];
     for (const topping of toppings) {
         if (topping.checked) {
-            selectedArr.push(topping.id);
+            selectedArr.push(topping);
         }
     }
     return selectedArr;
@@ -113,6 +118,8 @@ function formHandler() {
         document.getElementById("secondSection").classList.remove("hidden");
         // update order summary: 
         document.getElementById("sum-name").innerText = orderInfo.orderName;
+        document.getElementById("sum-size").innerText = formatName(orderInfo.size);
+        document.getElementById("sum-topping").innerText = orderInfo.getNumOfToppings();
         document.getElementById("sum-discount").innerText = orderInfo.discountEligibility();
         document.getElementById("sum-price").innerText = orderInfo.getTotalPrice();
     })

@@ -61,13 +61,6 @@ section {
     height: fit-content;
     padding: 2rem 4rem;
     background-color: rgb(253, 195, 108);
-    hr {
-        border-top: 3px dotted black;
-        border-bottom: none;
-        width: calc(60vw - 4rem);
-        margin: 1rem 0 1rem -2rem;
-        text-align: center;
-    }
 }
 form {
     input, button {
@@ -91,5 +84,18 @@ form {
         border-radius: 4px;
         background-color: black;
         color: orange;
+        cursor: pointer;
+    }
+}
+#secondSection {
+    ul {
+        background-color: black;
+        color: white;
+        padding: 1.5rem 3rem;
+        font-size: 1.1rem;
+        li {
+            list-style: none;
+            line-height: 2.25rem;
+        }
     }
 }

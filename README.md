@@ -38,11 +38,23 @@ Test: "It should return an Order object with five properties for: order name, si
 Code: const minsu = new Order("Minsu", "large", ["olive", "mushroom"], ["pepperoni"], "pickup");
 Expected: Pizza { orderName: "Minsu", size: "large", firstToppings: ["olive", "mushroom"], secondToppings: ["pepperoni"], method: "pickup" }
 
-Describe: Order.getTotalPrice()
+Describe: Order.prototype.getNumOfToppings()
+ 
+Test: "It should return information about number of first and second toppings."
+Code: firstPizza.getNumOfToppings();
+Expected: "2 first topping(s) and 1 second topping(s)"
+
+Describe: Order.prototype.getTotalPrice()
  
 Test: "It should return a total price for the order, rounded to 2 decimals."
 Code: firstPizza.getTotalPrice();
 Expected: 22.09
+
+Describe: Order.prototype.discountEligibility()
+ 
+Test: "It should return 'Yes' or 'No', depending on the order receive method users choose."
+Code: firstPizza.discountEligibility();
+Expected: "Yes"
 
 Describe: formatName()
  

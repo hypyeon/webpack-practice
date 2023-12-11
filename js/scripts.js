@@ -114,6 +114,8 @@ function formHandler() {
         const method = getMethod();
         // create an Object with info:
         const orderInfo = new Order(orderName, size, first, second, method);
+        // hide first section:
+        document.getElementById("firstSection").classList.add("hidden");
         // unhide second section:
         document.getElementById("secondSection").classList.remove("hidden");
         // update order summary: 
@@ -122,6 +124,19 @@ function formHandler() {
         document.getElementById("sum-topping").innerText = orderInfo.getNumOfToppings();
         document.getElementById("sum-discount").innerText = orderInfo.discountEligibility();
         document.getElementById("sum-price").innerText = orderInfo.getTotalPrice();
+    })
+    const back = document.getElementById("previous");
+    const reset = document.getElementById("new");
+    back.addEventListener("click", e => {
+        e.preventDefault();
+        // unhide first section:
+        document.getElementById("firstSection").classList.remove("hidden");
+        // hide second section:
+        document.getElementById("secondSection").classList.add("hidden");
+    })
+    reset.addEventListener("click", e => {
+        e.preventDefault();
+        window.location.reload();
     })
 }
 

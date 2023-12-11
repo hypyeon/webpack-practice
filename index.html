@@ -8,7 +8,7 @@
 </head>
 <body class="flex col flex-center">
     <section id="firstSection">
-        <form id="orderInfo">
+        <form id="orderInfo" class="flex col">
             <div id="orderName">
                 <h3>Who's this order for?</h3>
                 <input type="text" id="name" placeholder="Name for your order" required>
@@ -68,13 +68,19 @@
         </form>
     </section>
     <section class="hidden" id="secondSection">
-        <ul>
-            <li>&#127829; Order Name: <span id="sum-name"></span></li>
-            <li>&#127829; Pizza size: <span id="sum-size"></span></li>
-            <li>&#127829; Toppings: <span id="sum-topping"></span></li>
-            <li>&#127829; Discount: <span id="sum-discount"></span></li>
-            <li>&#127829; Total Price: $<span id="sum-price"></span></li>
-        </ul>
+        <div class="flex col">
+            <ul>
+                <li>&#127829; Order Name: <span id="sum-name"></span></li>
+                <li>&#127829; Pizza size: <span id="sum-size"></span></li>
+                <li>&#127829; Toppings: <span id="sum-topping"></span></li>
+                <li>&#127829; Discount: <span id="sum-discount"></span></li>
+                <li>&#127829; Total Price: $<span id="sum-price"></span></li>
+            </ul>
+            <div class="flex">
+                <button id="previous">Go back</button>   
+                <button id="new">New order</button>     
+            </div>
+        </div>
     </section>
     <script src="js/scripts.js"></script>
 </body>

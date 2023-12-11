@@ -62,7 +62,7 @@ body {
     height: 100vh;
     font-family: $secondaryFont;
     background-color: rgba(113, 113, 113, 0.225);
-    background-image: url('/images/icons8-pizza-80.png');
+    background-image: url('../images/icons8-pizza-80.png');
     gap: 4vw;
     h3 {
         font-family: $primaryFont;
@@ -115,6 +115,7 @@ form {
         gap: 1rem;
         p {
             font-family: $primaryFont;
+            color: rgb(192, 192, 192);
         }
     }
     ul {

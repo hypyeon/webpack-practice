@@ -120,6 +120,7 @@ function formHandler() {
         const orderInfo = new Order(orderName, size, first, second, method);
         // create order name lists:
         document.getElementById(`order-${i}`).innerText = `${orderInfo.orderName}'s Order`;
+        document.getElementById(`order-${i}`).style.color = 'black';
         document.getElementById(`detail-${i}`).classList.remove("hidden");
         // update order summary: 
         document.getElementById(`sum-name-${i}`).innerText = orderInfo.orderName;

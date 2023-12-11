@@ -35,7 +35,7 @@ https://hypyeon.github.io/pizza-parlor/
 Describe: Order()
  
 Test: "It should return an Order object with five properties for: order name, size of pizza, an array of selected $2 toppings, an array of selected $3 toppings, and food receive method."
-Code: const minsu = new Order("Minsu", "large", ["olive", "mushroom"], ["pepperoni"], "pickup");
+Code: const firstPizza = new Order("Minsu", "large", ["olive", "mushroom"], ["pepperoni"], "pickup");
 Expected: Pizza { orderName: "Minsu", size: "large", firstToppings: ["olive", "mushroom"], secondToppings: ["pepperoni"], method: "pickup" }
 
 Describe: Order.prototype.getNumOfToppings()
@@ -64,7 +64,7 @@ Expected: "Elsa"
 ```
 ## Known Bugs
 - No bugs detected currently. Feel free to reach out to the [author](mailto:hayeong.pyeon@gmail.com) if find any. 
-- Last updated: December 9th, 2023
+- Last updated: December 10, 2023
 
 ## License
 [MIT](/LICENSE.txt) Copyright © 2023 Hayeong Pyeon

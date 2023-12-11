@@ -12,12 +12,12 @@ $secondaryFont: 'Jaldi', sans-serif;
     }
 }
 @mixin buttonStyle {
-    margin: 1rem auto;
     padding: 0.25rem 1rem;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-family: $secondaryFont;
+    font-size: 1.05rem;
 }
 * {
     box-sizing: border-box;
@@ -36,6 +36,9 @@ $secondaryFont: 'Jaldi', sans-serif;
 .flex-center {
     justify-content: center;
     align-items: center;
+}
+.j-c-c {
+    justify-content: center;
 }
 .textNoStyle {
     @include textNoStyle;
@@ -60,16 +63,14 @@ body {
     font-family: $secondaryFont;
     background-color: rgba(113, 113, 113, 0.225);
     background-image: url('/images/icons8-pizza-80.png');
+    gap: 4vw;
     h3 {
         font-family: $primaryFont;
         padding: 1rem 0 .5rem 0;
     }
 }
 section {
-    width: 50vw;
     height: fit-content;
-    padding: 2rem 6rem;
-    background-color: rgb(255, 178, 63);
     border-radius: 25px;
 }
 form {
@@ -90,28 +91,48 @@ form {
     button {
         @include buttonStyle;
         background-color: black;
-        color: orange;
+        color: white;
+        margin: 1rem auto;
     }
 }
+#firstSection {
+    width: 36vw;
+    padding: 2rem 6rem;
+    background-color: rgb(255, 178, 63);
+}
 #secondSection {
+    width: 24vw;
+    padding: 2rem 3rem;
     background-color: black;
+    gap: 1vh;
+    div {
+        background-color: white;
+    }
+    .list, .orderDetail {
+        min-height: 25vh;
+    }
+    .list {
+        gap: 1rem;
+        p {
+            font-family: $primaryFont;
+        }
+    }
     ul {
-        color: white;
-        padding: 1.5rem 3rem;
+        color: black;
         font-size: 1.1rem;
+        padding: 1rem 2rem;
         li {
             list-style: none;
-            line-height: 2.25rem;
+            line-height: 1.5rem;
         }
     }
     button {
         @include buttonStyle;
         color: black;
     }
-    #previous {
+    .confirm {
         background-color: orange;
+        margin: auto;
     }
-    #new {
-        background-color: white;
-    }
+    
 }

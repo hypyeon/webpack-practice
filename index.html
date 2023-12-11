@@ -64,21 +64,68 @@
                 <input type="radio" name="method" id="delivery">
                 <label for="small">Delivery <span class="smallerFont">please provide driver's tip upon receiving your order - thanks!</span></label>
             </div>
-            <button type="submit">View order summary</button>
+            <button type="submit">Add to cart</button>
         </form>
     </section>
-    <section id="secondSection">
+    <section id="secondSection" class="flex col">
         <div class="flex col">
-            <ul>
-                <li>&#127829; Order Name: <span id="sum-name"></span></li>
-                <li>&#127829; Pizza size: <span id="sum-size"></span></li>
-                <li>&#127829; Toppings: <span id="sum-topping"></span></li>
-                <li>&#127829; Discount: <span id="sum-discount"></span></li>
-                <li>&#127829; Total Price: $<span id="sum-price"></span></li>
-            </ul>
-            <div class="flex">
-                <button id="previous">Go back</button>   
-                <button id="new">New order</button>     
+            <div class="list flex col flex-center" id="list-1">
+                <p id="order-1">No order yet.</p>
+                <button class="detail hidden" id="detail-1">Order detail</button>
+            </div>
+            <div class="hidden" id="orderDetail-1">
+                <div class="orderDetail flex col j-c-c">
+                    <ul>
+                        <li>&#127829; Order Name: <span id="sum-name-1"></span></li>
+                        <li>&#127829; Pizza size: <span id="sum-size-1"></span></li>
+                        <li>&#127829; Toppings: <span id="sum-topping-1"></span></li>
+                        <li>&#127829; Discount: <span id="sum-discount-1"></span></li>
+                        <li>&#127829; Total Price: $<span id="sum-price-1"></span></li>
+                    </ul>
+                    <div class="flex">
+                        <button class="confirm" id="confirm-1">Looks good!</button>    
+                    </div>        
+                </div>
+            </div>
+        </div>
+        <div class="flex col">
+            <div class="list flex col flex-center" id="list-2">
+                <p id="order-2">No order yet.</p>
+                <button class="detail hidden" id="detail-2">Order detail</button>
+            </div>
+            <div class="hidden" id="orderDetail-2">
+                <div class="orderDetail flex col j-c-c">
+                    <ul>
+                        <li>&#127829; Order Name: <span id="sum-name-2"></span></li>
+                        <li>&#127829; Pizza size: <span id="sum-size-2"></span></li>
+                        <li>&#127829; Toppings: <span id="sum-topping-2"></span></li>
+                        <li>&#127829; Discount: <span id="sum-discount-2"></span></li>
+                        <li>&#127829; Total Price: $<span id="sum-price-2"></span></li>
+                    </ul>
+                    <div class="flex">
+                        <button class="confirm" id="confirm-2">Looks good!</button>    
+                    </div>        
+                </div>
+            </div>
+        </div>
+        <div class="flex col">
+            <div class="list flex col flex-center" id="list-3">
+                <p id="order-3">No order yet.</p>
+                <button class="detail hidden" id="detail-3">Order detail</button>
+            </div>
+            <div class="hidden" id="orderDetail-3">
+                <div class="orderDetail flex col j-c-c">
+                    <ul>
+                        <li>&#127829; Order Name: <span id="sum-name-3"></span></li>
+                        <li>&#127829; Pizza size: <span id="sum-size-3"></span></li>
+                        <li>&#127829; Toppings: <span id="sum-topping-3"></span></li>
+                        <li>&#127829; Discount: <span id="sum-discount-3"></span></li>
+                        <li>&#127829; Total Price: $<span id="sum-price-3"></span></li>
+                    </ul>
+                    <div class="flex">
+                        <button class="confirm" id="confirm-3">Looks good!</button>    
+                    </div>        
+                </div>
             </div>
         </div>
     </section>

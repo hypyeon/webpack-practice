@@ -6,10 +6,13 @@ function Order(orderName, size, firstToppings, secondToppings, method) {
     this.secondToppings = secondToppings; 
     this.method = method;
 }
-Order.prototype.getNumOfToppings = function() {
-    const numOfFirsts = this.firstToppings.length;
-    const numOfSeconds = this.secondToppings.length;
-    return `${numOfFirsts} first topping(s) and ${numOfSeconds} second topping(s)`;
+Order.prototype.getToppingNames = function() {
+    let arr = this.firstToppings.concat(this.secondToppings);
+    if (arr.length !== 0) {
+        return arr.join(', ');
+    } else {
+        return 'none';
+    }
 }
 Order.prototype.getTotalPrice = function() {
     let priceForSize;
@@ -76,7 +79,7 @@ function getFirstToppings() {
     let selectedArr = [];
     for (const topping of toppings) {
         if (topping.checked) {
-            selectedArr.push(topping);
+            selectedArr.push(topping.nextElementSibling.textContent);
         }
     }
     return selectedArr;
@@ -86,7 +89,7 @@ function getSecondToppings() {
     let selectedArr = [];
     for (const topping of toppings) {
         if (topping.checked) {
-            selectedArr.push(topping);
+            selectedArr.push(topping.nextElementSibling.textContent);
         }
     }
     return selectedArr;
@@ -102,6 +105,7 @@ function getMethod() {
     }
     return selectedMethod;
 }
+let i = 1;
 function formHandler() {
     const form = document.getElementById("orderInfo");
     form.addEventListener("submit", e => {
@@ -114,29 +118,53 @@ function formHandler() {
         const method = getMethod();
         // create an Object with info:
         const orderInfo = new Order(orderName, size, first, second, method);
-        // hide first section:
-        document.getElementById("firstSection").classList.add("hidden");
-        // unhide second section:
-        document.getElementById("secondSection").classList.remove("hidden");
+        // create order name lists:
+        document.getElementById(`order-${i}`).innerText = `${orderInfo.orderName}'s Order`;
+        document.getElementById(`detail-${i}`).classList.remove("hidden");
         // update order summary: 
-        document.getElementById("sum-name").innerText = orderInfo.orderName;
-        document.getElementById("sum-size").innerText = formatName(orderInfo.size);
-        document.getElementById("sum-topping").innerText = orderInfo.getNumOfToppings();
-        document.getElementById("sum-discount").innerText = orderInfo.discountEligibility();
-        document.getElementById("sum-price").innerText = orderInfo.getTotalPrice();
-    })
-    const back = document.getElementById("previous");
-    const reset = document.getElementById("new");
-    back.addEventListener("click", e => {
+        document.getElementById(`sum-name-${i}`).innerText = orderInfo.orderName;
+        document.getElementById(`sum-size-${i}`).innerText = formatName(orderInfo.size);
+        document.getElementById(`sum-topping-${i}`).innerText = orderInfo.getToppingNames();
+        document.getElementById(`sum-discount-${i}`).innerText = orderInfo.discountEligibility();
+        document.getElementById(`sum-price-${i}`).innerText = orderInfo.getTotalPrice();
+        i++;
+        form.reset();
+    });
+    const detailBtnOne = document.getElementById("detail-1");
+    detailBtnOne.addEventListener("click", e => {
         e.preventDefault();
-        // unhide first section:
-        document.getElementById("firstSection").classList.remove("hidden");
-        // hide second section:
-        document.getElementById("secondSection").classList.add("hidden");
+        document.getElementById("list-1").classList.add("hidden");
+        document.getElementById("orderDetail-1").classList.remove("hidden");
     })
-    reset.addEventListener("click", e => {
+    const confirmBtnOne = document.getElementById("confirm-1");
+    confirmBtnOne.addEventListener("click", e => {
         e.preventDefault();
-        window.location.reload();
+        document.getElementById("list-1").classList.remove("hidden");
+        document.getElementById("orderDetail-1").classList.add("hidden");
+    })
+    const detailBtnTwo = document.getElementById("detail-2");
+    detailBtnTwo.addEventListener("click", e => {
+        e.preventDefault();
+        document.getElementById("list-2").classList.add("hidden");
+        document.getElementById("orderDetail-2").classList.remove("hidden");
+    })
+    const confirmBtnTwo = document.getElementById("confirm-2");
+    confirmBtnTwo.addEventListener("click", e => {
+        e.preventDefault();
+        document.getElementById("list-2").classList.remove("hidden");
+        document.getElementById("orderDetail-2").classList.add("hidden");
+    })
+    const detailBtnThree = document.getElementById("detail-3");
+    detailBtnThree.addEventListener("click", e => {
+        e.preventDefault();
+        document.getElementById("list-3").classList.add("hidden");
+        document.getElementById("orderDetail-3").classList.remove("hidden");
+    })
+    const confirmBtnThree = document.getElementById("confirm-3");
+    confirmBtnThree.addEventListener("click", e => {
+        e.preventDefault();
+        document.getElementById("list-3").classList.remove("hidden");
+        document.getElementById("orderDetail-3").classList.add("hidden");
     })
 }
 

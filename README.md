@@ -38,11 +38,11 @@ Test: "It should return an Order object with five properties for: order name, si
 Code: const firstPizza = new Order("Minsu", "large", ["olive", "mushroom"], ["pepperoni"], "pickup");
 Expected: Order { orderName: "Minsu", size: "large", firstToppings: ["olive", "mushroom"], secondToppings: ["pepperoni"], method: "pickup" }
 
-Describe: Order.prototype.getNumOfToppings()
+Describe: Order.prototype.getToppingNames()
  
-Test: "It should return information about number of first and second toppings."
+Test: "It should return all of selected topping names."
 Code: firstPizza.getNumOfToppings();
-Expected: "2 first topping(s) and 1 second topping(s)"
+Expected: "olive, mushroom, pepperoni"
 
 Describe: Order.prototype.getTotalPrice()
  

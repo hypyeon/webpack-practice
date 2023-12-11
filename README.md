@@ -36,7 +36,7 @@ Describe: Order()
  
 Test: "It should return an Order object with five properties for: order name, size of pizza, an array of selected $2 toppings, an array of selected $3 toppings, and food receive method."
 Code: const firstPizza = new Order("Minsu", "large", ["olive", "mushroom"], ["pepperoni"], "pickup");
-Expected: Pizza { orderName: "Minsu", size: "large", firstToppings: ["olive", "mushroom"], secondToppings: ["pepperoni"], method: "pickup" }
+Expected: Order { orderName: "Minsu", size: "large", firstToppings: ["olive", "mushroom"], secondToppings: ["pepperoni"], method: "pickup" }
 
 Describe: Order.prototype.getNumOfToppings()
  

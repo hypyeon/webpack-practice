@@ -20,7 +20,8 @@ by [Hayeong Pyeon](https://www.hayeong.website)
 ## Description
 - This is an independent project assigned by Epicodus. 
 - This project is part of 'Object-oriented JS' course. 
-- This project is to also practice TDD method. 
+- On the webpage, you can make up to 3 different pizza orders by customizing each one. Each order will be added to the right section which users have access to see order details upon clicking 'order detail' button. 
+- TDD included in this file.
 
 ## Setup Requirements
 1. Clone this repository to your desktop.
@@ -67,4 +68,5 @@ Expected: "Elsa"
 - Last updated: December 10, 2023
 
 ## License
-[MIT](/LICENSE.txt) Copyright © 2023 Hayeong Pyeon
+[MIT](/LICENSE.txt) Copyright © 2023 Hayeong Pyeon  
+Icons used for background is downloaded from [Icons8](https://icons8.com/icon/7DNAxn61w5zi/pizza)

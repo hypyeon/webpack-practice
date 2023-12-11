@@ -43,7 +43,7 @@ Describe: Order.prototype.getToppingNames()
  
 Test: "It should return all of selected topping names."
 Code: firstPizza.getNumOfToppings();
-Expected: "olive, mushroom, pepperoni"
+Expected: "Olive, Mushroom, Pepperoni"
 
 Describe: Order.prototype.getTotalPrice()
  

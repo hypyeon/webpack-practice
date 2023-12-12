@@ -42,7 +42,7 @@ Expected: Order { orderName: "Minsu", size: "large", firstToppings: ["olive", "m
 Describe: Order.prototype.getToppingNames()
  
 Test: "It should return all of selected topping names."
-Code: firstPizza.getNumOfToppings();
+Code: firstPizza.getToppingNames();
 Expected: "Olive, Mushroom, Pepperoni"
 
 Describe: Order.prototype.getTotalPrice()

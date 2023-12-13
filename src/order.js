@@ -1,5 +1,5 @@
 // Business logic: 
-function Order(orderName, size, firstToppings, secondToppings, method) {
+export default function Order(orderName, size, firstToppings, secondToppings, method) {
     this.orderName = orderName;
     this.size = size;
     this.firstToppings = firstToppings;

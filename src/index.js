@@ -115,4 +115,5 @@ function formHandler() {
 
 window.onload = () => {
     formHandler();
+    console.log("HIII");
 }

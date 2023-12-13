@@ -19,4 +19,14 @@ describe('Order', () => {
         const order = new Order("Lucy", "small", [], [], "pickup");
         expect(order.getToppingNames()).toEqual("none");
     });
+
+    test('should return a number with two decimals which is a sum of prices of selected pizza size, number of toppings, and delivery method', () => {
+        const order = new Order("Lucy", "small", ["mushroom", "onion"], ["pepperoni"], "delivery");
+        expect(order.getTotalPrice()).toEqual("16.50");
+    })
+
+    test('should apply discount of 5% when selected "pickup" for delivery method', () => {
+        const order = new Order("Lucy", "small", ["mushroom", "onion"], ["pepperoni"], "pickup");
+        expect(order.getTotalPrice()).toEqual("15.67");
+    })
 });

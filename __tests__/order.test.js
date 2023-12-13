@@ -8,6 +8,10 @@ describe('Order', () => {
         expect(order.firstToppings).toEqual(["mushroom", "onion"]);
         expect(order.secondToppings).toEqual(["pepperoni"]);
         expect(order.method).toEqual("pickup");
-    })
-})
+    });
 
+    test('should return names of all toppings', () => {
+        const order = new Order("Lucy", "small", ["mushroom", "onion"], ["pepperoni"], "pickup");
+        expect(order.getToppingNames()).toEqual("mushroom, onion, pepperoni");
+    });
+});

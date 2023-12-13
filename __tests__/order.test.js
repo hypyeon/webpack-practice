@@ -14,4 +14,9 @@ describe('Order', () => {
         const order = new Order("Lucy", "small", ["mushroom", "onion"], ["pepperoni"], "pickup");
         expect(order.getToppingNames()).toEqual("mushroom, onion, pepperoni");
     });
+
+    test('should return "none" if no topping is selected', () => {
+        const order = new Order("Lucy", "small", [], [], "pickup");
+        expect(order.getToppingNames()).toEqual("none");
+    });
 });
